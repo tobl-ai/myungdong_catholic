@@ -12,7 +12,9 @@ import { TechStack } from './sections/TechStack'
 import { Benchmarking } from './sections/Benchmarking'
 import { Roadmap } from './sections/Roadmap'
 import { Footer } from './components/Footer'
+import { WebRenewal } from './mockup/WebRenewal'
 import { GoodNewsMockup } from './mockup/GoodNewsMockup'
+import { AgentNative } from './mockup/AgentNative'
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('hero')
@@ -24,9 +26,9 @@ export default function App() {
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
 
-  if (route === '#/mockup') {
-    return <GoodNewsMockup />
-  }
+  if (route === '#/renewal') return <WebRenewal />
+  if (route === '#/mockup') return <GoodNewsMockup />
+  if (route === '#/agent') return <AgentNative />
 
   return (
     <div className="min-h-screen">

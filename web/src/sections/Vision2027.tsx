@@ -60,20 +60,45 @@ export function Vision2027() {
         </div>
       </Card>
 
-      {/* Mockup Link */}
-      <a
-        href="#/mockup"
-        className="mt-8 block bg-gradient-to-r from-primary to-primary-light rounded-2xl p-8 text-center text-white hover:shadow-xl transition-shadow group"
-      >
-        <div className="text-gold text-sm tracking-wider mb-2 font-medium">INTERACTIVE MOCKUP</div>
-        <h3 className="text-2xl font-bold mb-2 group-hover:text-gold transition-colors">
-          굿뉴스 2.0 풀 인터페이스 목업 →
-        </h3>
-        <p className="text-white/60 text-sm">
-          AI 교리 상담, 매일미사, 개인 대시보드, 본당 찾기, 묵주기도 카운터 등
-          에이전트 시대의 새로운 굿뉴스를 직접 체험해 보세요.
-        </p>
-      </a>
+      {/* 3 Mockup Links */}
+      <div className="mt-8 grid md:grid-cols-3 gap-4">
+        <a
+          href="#/renewal"
+          className="block bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-6 text-white hover:shadow-xl transition-shadow group"
+        >
+          <div className="text-xs tracking-wider mb-2 font-medium text-blue-200">PHASE 1 · 웹 리뉴얼</div>
+          <h3 className="text-lg font-bold mb-2 group-hover:text-blue-200 transition-colors">
+            모던 웹사이트 →
+          </h3>
+          <p className="text-white/50 text-xs">
+            전통적 웹 구조 + 반응형 + 현대적 디자인. 즉시 이해 가능한 UX.
+          </p>
+        </a>
+        <a
+          href="#/mockup"
+          className="block bg-gradient-to-r from-primary to-primary-light rounded-2xl p-6 text-white hover:shadow-xl transition-shadow group"
+        >
+          <div className="text-gold text-xs tracking-wider mb-2 font-medium">PHASE 2 · 에이전트 UX</div>
+          <h3 className="text-lg font-bold mb-2 group-hover:text-gold transition-colors">
+            AI 중심 인터페이스 →
+          </h3>
+          <p className="text-white/50 text-xs">
+            AI가 곧 인터페이스. 하나의 입력창이 모든 것을 해결.
+          </p>
+        </a>
+        <a
+          href="#/agent"
+          className="block bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 text-white hover:shadow-xl transition-shadow group border border-white/10"
+        >
+          <div className="text-blue-400 text-xs tracking-wider mb-2 font-medium">PHASE 3 · 네이티브</div>
+          <h3 className="text-lg font-bold mb-2 group-hover:text-blue-400 transition-colors">
+            내 폰의 AI 에이전트 →
+          </h3>
+          <p className="text-white/50 text-xs">
+            앱 불필요. 내 AI가 MCP/A2A로 굿뉴스에 직접 접속.
+          </p>
+        </a>
+      </div>
     </Section>
   )
 }
