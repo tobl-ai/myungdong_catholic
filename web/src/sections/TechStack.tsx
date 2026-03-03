@@ -15,7 +15,7 @@ export function TechStack() {
             ['AI (추론)', 'Gemini 2.5 Pro', '복잡한 교리 질의, 사목 분석'],
             ['벡터 DB', 'Pinecone / Vertex AI Vector Search', 'RAG용 임베딩 저장/검색'],
             ['개발 도구', 'Claude Code', 'AI 페어 프로그래밍, 5-10배 생산성'],
-            ['호스팅', 'Vercel + GCP', 'Next.js 최적, 글로벌 CDN'],
+            ['호스팅', 'Firebase App Hosting / Vercel', 'Next.js 네이티브 지원, 글로벌 CDN, GCP 통합'],
           ]}
         />
       </Card>
