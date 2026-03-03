@@ -1,9 +1,13 @@
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary via-primary-light to-primary overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 right-20 w-96 h-96 rounded-full bg-gold blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-64 h-64 rounded-full bg-white blur-3xl" />
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src={`${import.meta.env.BASE_URL}images/hero-faith-tech.png`}
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/70 to-primary/90" />
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl">

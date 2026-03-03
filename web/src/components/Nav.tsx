@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 const sections = [
   { id: 'hero', label: '개요', icon: '✝' },
+  { id: 'carlo', label: '카를로 아쿠티스', icon: '🕊' },
   { id: 'rfp', label: 'RFP 요약', icon: '📋' },
   { id: 'diagnosis', label: '현행 진단', icon: '🔍' },
   { id: 'before-after', label: 'Before & After', icon: '🔄' },

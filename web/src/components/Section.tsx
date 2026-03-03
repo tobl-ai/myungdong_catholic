@@ -53,7 +53,7 @@ export function Table({ headers, rows }: { headers: string[]; rows: string[][] }
           {rows.map((row, i) => (
             <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
               {row.map((cell, j) => (
-                <td key={j} className="px-4 py-3 border-t border-border">{cell}</td>
+                <td key={j} className="px-4 py-3 border-t border-border text-gray-800">{cell}</td>
               ))}
             </tr>
           ))}

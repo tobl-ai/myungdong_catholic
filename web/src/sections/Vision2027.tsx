@@ -59,6 +59,21 @@ export function Vision2027() {
           ))}
         </div>
       </Card>
+
+      {/* Mockup Link */}
+      <a
+        href="#/mockup"
+        className="mt-8 block bg-gradient-to-r from-primary to-primary-light rounded-2xl p-8 text-center text-white hover:shadow-xl transition-shadow group"
+      >
+        <div className="text-gold text-sm tracking-wider mb-2 font-medium">INTERACTIVE MOCKUP</div>
+        <h3 className="text-2xl font-bold mb-2 group-hover:text-gold transition-colors">
+          굿뉴스 2.0 풀 인터페이스 목업 →
+        </h3>
+        <p className="text-white/60 text-sm">
+          AI 교리 상담, 매일미사, 개인 대시보드, 본당 찾기, 묵주기도 카운터 등
+          에이전트 시대의 새로운 굿뉴스를 직접 체험해 보세요.
+        </p>
+      </a>
     </Section>
   )
 }
