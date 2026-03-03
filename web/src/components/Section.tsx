@@ -41,7 +41,7 @@ export function Card({ children, className = '' }: { children: ReactNode; classN
 export function Table({ headers, rows }: { headers: string[]; rows: string[][] }) {
   return (
     <div className="overflow-x-auto rounded-xl border border-border">
-      <table className="w-full text-sm">
+      <table className="w-full text-sm text-gray-800">
         <thead>
           <tr className="bg-primary text-white">
             {headers.map((h, i) => (
