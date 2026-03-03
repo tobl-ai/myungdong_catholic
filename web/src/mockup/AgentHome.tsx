@@ -11,9 +11,10 @@ function getGreeting(h: number) {
 }
 
 const contextCards = [
-  { label: '오늘의 복음', sub: '마르 10,17-27', icon: '📖' },
-  { label: '저녁미사', sub: '명동성당 19:00', icon: '⛪' },
-  { label: '묵주기도', sub: '오늘 아직 안 함', icon: '📿' },
+  { label: '오늘의 복음', sub: '마르 10,17-27', icon: '📖', accent: false },
+  { label: '저녁미사', sub: '명동성당 19:00', icon: '⛪', accent: false },
+  { label: '묵주기도', sub: '오늘 아직 안 함', icon: '📿', accent: true },
+  { label: '오늘의 성인', sub: '성녀 쿠네군다', icon: '🕊', accent: false },
 ]
 
 const suggestions = [
@@ -26,20 +27,19 @@ const suggestions = [
 ]
 
 interface Props {
-  base: string
   time: Date
   onAsk: (q: string) => void
 }
 
-export function AgentHome({ base: _base, time, onAsk }: Props) {
+export function AgentHome({ time, onAsk }: Props) {
   const hour = time.getHours()
 
   return (
-    <main className="max-w-lg mx-auto px-5 pb-24 pt-6">
+    <main className="max-w-2xl mx-auto px-5 pb-24 md:pb-8 pt-6 md:pt-10">
       {/* Greeting */}
       <section className="mb-8">
         <p className="text-black/40 text-sm">{getGreeting(hour)}, 마리아님</p>
-        <h1 className="text-2xl font-semibold tracking-tight mt-1 leading-snug">
+        <h1 className="text-2xl md:text-3xl font-semibold tracking-tight mt-1 leading-snug">
           연중 제8주간 월요일
         </h1>
         <p className="text-black/30 text-xs mt-2">2026년 3월 3일 · 사순 시기 전</p>
@@ -49,15 +49,14 @@ export function AgentHome({ base: _base, time, onAsk }: Props) {
       <section className="mb-10">
         <button
           onClick={() => onAsk('')}
-          className="w-full bg-white rounded-2xl p-4 flex items-center gap-3 shadow-[0_1px_3px_rgba(0,0,0,0.04)] border border-black/5 hover:border-[#d4b896]/40 hover:shadow-[0_2px_12px_rgba(212,184,150,0.15)] transition-all active:scale-[0.99]"
+          className="w-full bg-white rounded-2xl p-4 md:p-5 flex items-center gap-3 shadow-[0_1px_3px_rgba(0,0,0,0.04)] border border-black/5 hover:border-[#d4b896]/40 hover:shadow-[0_2px_12px_rgba(212,184,150,0.15)] transition-all active:scale-[0.99]"
         >
-          <div className="w-9 h-9 rounded-xl bg-[#1a1a1a] flex items-center justify-center shrink-0">
-            <span className="text-[#d4b896] text-sm">✦</span>
+          <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-[#1a1a1a] flex items-center justify-center shrink-0">
+            <span className="text-[#d4b896] text-sm md:text-base">✦</span>
           </div>
-          <span className="text-black/30 text-sm text-left">무엇이든 물어보세요...</span>
+          <span className="text-black/30 text-sm md:text-base text-left">무엇이든 물어보세요...</span>
         </button>
 
-        {/* Quick Suggestions - Horizontal Scroll */}
         <div className="flex gap-2 mt-3 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-none">
           {suggestions.map(s => (
             <button
@@ -71,29 +70,31 @@ export function AgentHome({ base: _base, time, onAsk }: Props) {
         </div>
       </section>
 
-      {/* Context Cards - What you need right now */}
+      {/* Context Cards */}
       <section className="mb-10">
         <h2 className="text-[11px] text-black/30 tracking-wider uppercase mb-3">지금</h2>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
           {contextCards.map(c => (
             <button
               key={c.label}
               onClick={() => onAsk(c.label)}
-              className="bg-white rounded-2xl p-4 text-left border border-black/5 hover:border-[#d4b896]/30 transition-all active:scale-[0.97]"
+              className={`bg-white rounded-2xl p-4 md:p-5 text-left border hover:border-[#d4b896]/30 transition-all active:scale-[0.97]
+                ${c.accent ? 'border-[#d4b896]/30 bg-[#d4b896]/[0.03]' : 'border-black/5'}`}
             >
-              <span className="text-xl">{c.icon}</span>
-              <div className="mt-3 text-xs font-medium leading-tight">{c.label}</div>
-              <div className="text-[10px] text-black/30 mt-1">{c.sub}</div>
+              <span className="text-xl md:text-2xl">{c.icon}</span>
+              <div className="mt-3 text-xs md:text-sm font-medium leading-tight">{c.label}</div>
+              <div className="text-[10px] md:text-xs text-black/30 mt-1">{c.sub}</div>
             </button>
           ))}
         </div>
       </section>
 
-      {/* Today's Verse */}
-      <section className="mb-10">
+      {/* Two Column on Desktop: Verse + Rosary */}
+      <section className="grid md:grid-cols-2 gap-4 mb-10">
+        {/* Today's Verse */}
         <div className="bg-[#1a1a1a] rounded-2xl p-6 text-white">
           <p className="text-white/40 text-[10px] tracking-wider uppercase mb-4">오늘의 말씀</p>
-          <blockquote className="text-lg font-light leading-relaxed mb-4">
+          <blockquote className="text-lg md:text-xl font-light leading-relaxed mb-4">
             "주님은 나의 목자,<br />아쉬울 것 없어라."
           </blockquote>
           <p className="text-white/30 text-xs">시편 23,1 · 화답송</p>
@@ -104,26 +105,24 @@ export function AgentHome({ base: _base, time, onAsk }: Props) {
             ✦ AI 해설 듣기
           </button>
         </div>
-      </section>
 
-      {/* Rosary Counter - Minimal */}
-      <section className="mb-10">
-        <div className="bg-white rounded-2xl p-5 border border-black/5">
-          <div className="flex items-center justify-between mb-3">
+        {/* Rosary Counter */}
+        <div className="bg-white rounded-2xl p-6 border border-black/5">
+          <div className="flex items-center justify-between mb-4">
             <div>
               <div className="text-[10px] text-black/30 tracking-wider uppercase">WYD 2027 묵주기도</div>
-              <div className="text-xl font-semibold tracking-tight mt-1">3.5억단</div>
+              <div className="text-2xl md:text-3xl font-semibold tracking-tight mt-1">3.5억단</div>
             </div>
             <div className="text-right">
               <div className="text-[10px] text-black/30">목표 10억단</div>
               <div className="text-xs text-[#d4b896] font-medium mt-1">35.2%</div>
             </div>
           </div>
-          <div className="h-1 bg-black/5 rounded-full overflow-hidden">
+          <div className="h-1.5 bg-black/5 rounded-full overflow-hidden mb-4">
             <div className="h-full bg-[#d4b896] rounded-full w-[35%]" />
           </div>
-          <button className="mt-4 w-full py-2.5 bg-[#1a1a1a] text-white text-xs rounded-xl hover:bg-black/80 transition-colors">
-            오늘의 묵주기도 봉헌 →
+          <button className="w-full py-2.5 bg-[#1a1a1a] text-white text-xs rounded-xl hover:bg-black/80 transition-colors">
+            📿 묵주기도 봉헌 →
           </button>
         </div>
       </section>
@@ -131,20 +130,19 @@ export function AgentHome({ base: _base, time, onAsk }: Props) {
       {/* Recent Conversations */}
       <section className="mb-10">
         <h2 className="text-[11px] text-black/30 tracking-wider uppercase mb-3">최근 대화</h2>
-        <div className="space-y-2">
+        <div className="grid md:grid-cols-2 gap-2">
           {[
             { q: '세례 준비 과정 안내', when: '어제', msgs: 4 },
             { q: '사순 시기 의미와 실천', when: '3일 전', msgs: 6 },
             { q: '명동성당 주일미사 시간', when: '1주 전', msgs: 2 },
+            { q: '고해성사 양심성찰 도움', when: '2주 전', msgs: 3 },
           ].map(conv => (
             <button
               key={conv.q}
               onClick={() => onAsk(conv.q)}
               className="w-full bg-white rounded-xl p-4 flex items-center gap-3 text-left border border-black/5 hover:border-[#d4b896]/30 transition-all"
             >
-              <div className="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/20 text-xs shrink-0">
-                ✦
-              </div>
+              <div className="w-8 h-8 rounded-lg bg-black/5 flex items-center justify-center text-black/20 text-xs shrink-0">✦</div>
               <div className="flex-1 min-w-0">
                 <div className="text-sm font-medium truncate">{conv.q}</div>
                 <div className="text-[10px] text-black/30 mt-0.5">{conv.when} · {conv.msgs}개 메시지</div>
@@ -155,16 +153,15 @@ export function AgentHome({ base: _base, time, onAsk }: Props) {
         </div>
       </section>
 
-      {/* Agent Era Badge */}
-      <section className="text-center py-8">
-        <div className="inline-flex items-center gap-2 text-[10px] text-black/20">
-          <span>MCP</span>
-          <span className="w-0.5 h-0.5 rounded-full bg-black/15" />
-          <span>A2A</span>
-          <span className="w-0.5 h-0.5 rounded-full bg-black/15" />
-          <span>llms.txt</span>
-          <span className="w-0.5 h-0.5 rounded-full bg-black/15" />
-          <span>Agent-Ready</span>
+      {/* Agent Protocols */}
+      <section className="text-center py-6">
+        <div className="inline-flex items-center gap-2 text-[10px] text-black/20 flex-wrap justify-center">
+          {['MCP', 'A2A', 'llms.txt', 'Agent-Ready', 'Firebase', 'Gemini'].map((t, i) => (
+            <span key={t} className="flex items-center gap-2">
+              {i > 0 && <span className="w-0.5 h-0.5 rounded-full bg-black/15" />}
+              {t}
+            </span>
+          ))}
         </div>
       </section>
     </main>
