@@ -15,6 +15,7 @@ import { Footer } from './components/Footer'
 import { WebRenewal } from './mockup/WebRenewal'
 import { GoodNewsMockup } from './mockup/GoodNewsMockup'
 import { AgentNative } from './mockup/AgentNative'
+import { Phase2Mockup } from './mockup/phase2/Phase2Mockup'
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('hero')
@@ -29,6 +30,7 @@ export default function App() {
   if (route === '#/renewal') return <WebRenewal />
   if (route === '#/mockup') return <GoodNewsMockup />
   if (route === '#/agent') return <AgentNative />
+  if (route === '#/p2') return <Phase2Mockup />
 
   return (
     <div className="min-h-screen">
@@ -38,10 +40,10 @@ export default function App() {
         <CarloAcutis />
         <RfpSummary />
         <CurrentDiagnosis />
+        <SecurityAnalysis />
         <BeforeAfter />
         <Vision2027 />
         <YangupErp />
-        <SecurityAnalysis />
         <TechStack />
         <Benchmarking />
         <Roadmap />

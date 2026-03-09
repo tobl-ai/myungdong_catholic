@@ -2,7 +2,7 @@ import { Section, Card, Table } from '../components/Section'
 
 export function TechStack() {
   return (
-    <Section id="tech" title="8. AI 초효율 구축 전략" subtitle="Firebase + Next.js + Claude Code = 85% 비용 절감">
+    <Section id="tech" title="7. AI 초효율 구축 전략" subtitle="Firebase + Next.js + Claude Code = 85% 비용 절감">
       <Card className="mb-8">
         <h3 className="font-bold text-lg mb-4 text-primary">추천 기술 스택</h3>
         <Table

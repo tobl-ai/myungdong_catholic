@@ -33,7 +33,7 @@ const phases = [
 
 export function Roadmap() {
   return (
-    <Section id="roadmap" title="10. 단계별 로드맵" subtitle="총 약 1.9억원, 7개월 (AI 초효율 기준)">
+    <Section id="roadmap" title="9. 단계별 로드맵" subtitle="총 약 1.9억원, 7개월 (AI 초효율 기준)">
       <div className="grid md:grid-cols-4 gap-4 mb-8">
         {phases.map((p, i) => (
           <Card key={i} className={`border-l-4 ${p.color}`}>

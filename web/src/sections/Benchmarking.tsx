@@ -2,7 +2,7 @@ import { Section, Card, Table } from '../components/Section'
 
 export function Benchmarking() {
   return (
-    <Section id="benchmark" title="9. 해외 벤치마킹" subtitle="글로벌 가톨릭 디지털 선교 사례">
+    <Section id="benchmark" title="8. 해외 벤치마킹" subtitle="글로벌 가톨릭 디지털 선교 사례">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         {[
           {

@@ -30,7 +30,7 @@ const scenarios = [
 
 export function BeforeAfter() {
   return (
-    <Section id="before-after" title="3. 에이전트 시대 Before & After" subtitle="사용자 시나리오별 변화" dark>
+    <Section id="before-after" title="4. 에이전트 시대 Before & After" subtitle="사용자 시나리오별 변화" dark>
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
           <h3 className="text-white/40 text-sm tracking-widest uppercase mb-4">2026 이전 (현재)</h3>

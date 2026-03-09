@@ -26,7 +26,7 @@ const aiFeatures = [
 
 export function Vision2027() {
   return (
-    <Section id="vision" title="4. 2027년형 굿뉴스 비전" subtitle="API-First · AI-Native · Agent-Ready">
+    <Section id="vision" title="5. 2027년형 굿뉴스 비전" subtitle="API-First · AI-Native · Agent-Ready">
       <div className="grid md:grid-cols-4 gap-3 mb-10">
         {['API-First', 'AI-Native', 'Agent-Ready', '신자 생애주기'].map((p, i) => (
           <div key={i} className="bg-primary text-white rounded-xl p-4 text-center">
@@ -60,13 +60,14 @@ export function Vision2027() {
         </div>
       </Card>
 
-      {/* 3 Mockup Links */}
-      <div className="mt-8 grid md:grid-cols-3 gap-4">
+      {/* Phase 1 Mockup Links */}
+      <h3 className="font-bold text-lg mt-10 mb-4 text-primary">Phase 1 · 기본 목업</h3>
+      <div className="grid md:grid-cols-3 gap-4">
         <a
           href="#/renewal"
           className="block bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-6 text-white hover:shadow-xl transition-shadow group"
         >
-          <div className="text-xs tracking-wider mb-2 font-medium text-blue-200">PHASE 1 · 웹 리뉴얼</div>
+          <div className="text-xs tracking-wider mb-2 font-medium text-blue-200">웹 리뉴얼</div>
           <h3 className="text-lg font-bold mb-2 group-hover:text-blue-200 transition-colors">
             모던 웹사이트 →
           </h3>
@@ -78,7 +79,7 @@ export function Vision2027() {
           href="#/mockup"
           className="block bg-gradient-to-r from-primary to-primary-light rounded-2xl p-6 text-white hover:shadow-xl transition-shadow group"
         >
-          <div className="text-gold text-xs tracking-wider mb-2 font-medium">PHASE 2 · 에이전트 UX</div>
+          <div className="text-gold text-xs tracking-wider mb-2 font-medium">에이전트 UX</div>
           <h3 className="text-lg font-bold mb-2 group-hover:text-gold transition-colors">
             AI 중심 인터페이스 →
           </h3>
@@ -90,7 +91,7 @@ export function Vision2027() {
           href="#/agent"
           className="block bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 text-white hover:shadow-xl transition-shadow group border border-white/10"
         >
-          <div className="text-blue-400 text-xs tracking-wider mb-2 font-medium">PHASE 3 · 네이티브</div>
+          <div className="text-blue-400 text-xs tracking-wider mb-2 font-medium">네이티브 AI</div>
           <h3 className="text-lg font-bold mb-2 group-hover:text-blue-400 transition-colors">
             내 폰의 AI 에이전트 →
           </h3>
@@ -99,6 +100,31 @@ export function Vision2027() {
           </p>
         </a>
       </div>
+
+      {/* Phase 2 Link */}
+      <h3 className="font-bold text-lg mt-8 mb-4 text-primary">Phase 2 · 차세대 에이전트 UX</h3>
+      <a
+        href="#/p2"
+        className="block bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-700 rounded-2xl p-6 md:p-8 text-white hover:shadow-2xl hover:shadow-indigo-500/20 transition-all group"
+      >
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <div className="text-indigo-200 text-xs tracking-wider mb-2 font-medium">PHASE 2 · AGENTIC UX</div>
+            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-indigo-200 transition-colors">
+              차세대 에이전트 인터페이스 →
+            </h3>
+            <p className="text-white/50 text-sm max-w-lg">
+              Generative UI, Autonomy Dial, Audit Interface, Intent Preview,
+              Confidence Signal, Escalation Pathway, Delegative UI, Anticipatory Design
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 md:max-w-[200px]">
+            {['Generative UI', 'Autonomy Dial', 'Audit Log', 'Confidence', 'Delegation', 'Escalation'].map(tag => (
+              <span key={tag} className="text-[9px] bg-white/10 px-2 py-1 rounded-md text-white/60">{tag}</span>
+            ))}
+          </div>
+        </div>
+      </a>
     </Section>
   )
 }
